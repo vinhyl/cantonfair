@@ -1,0 +1,11 @@
+body {
+  padding-top: 70px;
+}
+
+.navbar-brand {
+  background-image: url('../img/hm.png');
+  background-repeat: no-repeat;
+  background-position: 12px 12px;
+  display: block;
+  text-indent: 75px;
+}
