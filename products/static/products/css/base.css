@@ -7,5 +7,15 @@ body {
   background-repeat: no-repeat;
   background-position: 12px 12px;
   display: block;
-  text-indent: 75px;
+  text-indent: -2000px;
+}
+
+.product {
+	margin-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+	.navbar-brand {
+		text-indent: 75px;
+	}
 }

@@ -1,5 +1,4 @@
 # Django settings for cantonfair project.
-import os
 from unipath import Path
 
 PORJECT_ROOT = Path(__file__).ancestor(2)
@@ -16,7 +15,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'E:/vin/dev/sqlite/cantonfair.db',                      # Or path to database file if using sqlite3.
+        'NAME': Path(PORJECT_ROOT,'cantonfair.db'),                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -129,6 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'ckeditor',
     'south',
     'products',
 )
@@ -159,5 +159,17 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+    }
+}
+
+CKEDITOR_UPLOAD_PATH = PORJECT_ROOT.child('media')
+
+# CKEDITOR_UPLOAD_PREFIX = "http://127.0.0.1:8000/media"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Full',
+        # 'height': 300,
+        # 'width': 500,
     }
 }

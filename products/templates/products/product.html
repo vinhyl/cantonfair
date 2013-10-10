@@ -17,7 +17,7 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
             {% for category in category_list %}
-                <li><a href="#">{{ category.name }}</a></li>
+              <li><a href="{% url 'products:category' category.slug %}">{{ category.name }}</a></li>
             {% endfor %}
         </ul>
       </div>
@@ -25,18 +25,20 @@
 {% endblock header %}
 
 {% block content %}
+  <div class="container">
     <div class="row">
         {% for product in product_list %}
-            <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product">
                 <div class="thumbnail">
                     <img src="{{ product.photo.url }}" alt="{{ product.model }}">
                     <div class="caption">
-                        <h3>{{ product.model }}</h3>
-                        <p>{{ product.description }}</p>
-                        <p><a href="{{ product.document.url }}" class="btn btn-primary">Download</a></p>
+                        <h3>{{ product.category }} {{ product.model }}</h3>
+                        <p>{{ product.description | safe }}</p>
+                        <p><a href="{{ product.document.url }}" class="btn btn-info"><span class="glyphicon glyphicon-download"></span> Download</a></p>
                     </div>
                 </div>
             </div>
         {% endfor %}
     </div>
+  </div>
 {% endblock content %}
