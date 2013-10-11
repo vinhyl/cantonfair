@@ -3,9 +3,10 @@ from .models import Category, Product
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ("model", "category")
-    list_filter = ('category')
-    search_fields = ['model']
+    list_display = ("model", "category", "order")
+    list_editable = ("order",)
+    list_filter = ("category",)
+    search_fields = ["model"]
 
 
 class CategoryAdmin(admin.ModelAdmin):
