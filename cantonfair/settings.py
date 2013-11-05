@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'south',
     'products',
+    'customers',
 )
 
 # A sample logging configuration. The only tangible logging

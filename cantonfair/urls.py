@@ -15,5 +15,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     (r'^ckeditor/', include('ckeditor.urls')),
+    url(r'^', include('customers.urls', namespace="customers")),
     url(r'^', include('products.urls', namespace="products")),
 )

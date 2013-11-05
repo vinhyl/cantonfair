@@ -1,0 +1,85 @@
+{% extends "products\__base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="jumbotron">
+          <div class="container">
+            <h2 class="text-primary">The Leader in Kitchen Appliances</h2>
+            <p>Our company was established in 1996 and it is an industrial and trading company which specializes in development and production of kitchen appliances and cookware products, import and export business, custom clearance and international logistics.</p>
+            <div class="row">
+              <div class="col-md-4 col-sm-4">
+                <a href="#" class="thumbnail">
+                  <img class="img-circle" src="{% static 'products/img/about_1.jpg' %}" alt="office">
+                </a>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <a href="#" class="thumbnail">
+                  <img class="img-circle" src="{% static 'products/img/about_2.jpg' %}" alt="factory">
+                </a>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <a href="#" class="thumbnail">
+                  <img class="img-circle" src="{% static 'products/img/about_3.jpg' %}" alt="production line">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-sm-8">
+        <table class="table table-hover">
+          <tr>
+            <td>Annual Output Value</td>
+            <td>US$30 Million</td>
+          </tr>
+          <tr>
+            <td>Export Percentage</td>
+            <td>81% - 90%</td>
+          </tr>
+          <tr>
+            <td>No. of Employees</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>Average Lead Time</td>
+            <td>45 Days</td>
+          </tr>
+          <tr>
+            <td>Export Mode</td>
+            <td>Have Own Export License<br>License Number: 00962860</td>
+          </tr>
+          <tr>
+            <td>Factory Size</td>
+            <td>50,000 square meters</td>
+          </tr>
+          <tr>
+            <td>No. of Production Lines</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td rowspan="3">Contract Manufacturing</td>
+            <td>OEM Service Offered</td>
+          </tr>
+          <tr>
+            <td>Design Service Offered</td>
+          </tr>
+          <tr>
+            <td>Buyer Label Offered</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <a href="#" class="thumbnail"><img src="{% static 'products/img/machine.jpg' %}" alt="machine"></a>
+        <a href="#" class="thumbnail"><img src="{% static 'products/img/factory.jpg' %}" alt="factory"></a>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="margin-top:30px">
+    <a href="{% url 'customers:customer' %}" class="btn btn-danger btn-lg btn-block">Request Now</a>
+  </div>
+{% endblock content %}

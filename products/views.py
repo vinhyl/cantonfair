@@ -1,6 +1,24 @@
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from .models import Category, Product
+
+
+class AboutView(TemplateView):
+    template_name = "products\\about.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(AboutView, self).get_context_data(**kwargs)
+        context["category_list"] = Category.objects.all()
+        return context
+
+
+class DemoView(TemplateView):
+    template_name = "products\milkfrother.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(DemoView, self).get_context_data(**kwargs)
+        context["category_list"] = Category.objects.all()
+        return context
 
 
 class ProductView(ListView):

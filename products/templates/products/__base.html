@@ -23,11 +23,12 @@
         {% block extra_head %}
         {% endblock extra_head %}
     </head>
-
+    <a name="top"></a>
     <body>
 
         <header>
             {% block header %}
+                {% include "products\_navigation.html" %}
             {% endblock header %}
         </header>
 
@@ -38,6 +39,7 @@
 
         <footer>    
             {% block footer %}
+                {% include "products\_footer.html" %}
             {% endblock footer %}
         </footer>
   
